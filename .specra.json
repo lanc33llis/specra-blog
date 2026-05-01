@@ -1,0 +1,5 @@
+{
+  "projectId": "d9e59ad7-3f07-4a62-ab00-3d583509b93a",
+  "previewUrl": "http://localhost:3005/posts/dynamic-routing",
+  "devCommand": "npm run dev -- --port 3005"
+}

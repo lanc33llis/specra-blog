@@ -1,5 +1,5 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-base leading-7 text-muted-foreground;
 }
 
 .markdown p,
@@ -10,9 +10,26 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply mb-4 mt-12 text-2xl font-medium leading-snug text-foreground;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply mb-4 mt-8 text-xl font-medium leading-snug text-foreground;
+}
+
+.markdown a {
+  @apply font-medium text-foreground underline;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply pl-5;
+}
+
+.markdown li {
+  @apply my-2;
+}
+
+.markdown blockquote {
+  @apply rounded-xl border border-border bg-muted px-5 py-1 text-foreground;
 }

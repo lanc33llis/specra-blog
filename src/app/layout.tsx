@@ -1,15 +1,37 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Geist-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Geist-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Geist-SemiBold.otf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-geist",
+});
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  metadataBase: new URL("https://blogs.specra.tech"),
+  title: "Specra Blog",
+  description:
+    "Notes on design context, UI evaluation, and building product interfaces with AI coding agents.",
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -21,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link
           rel="apple-touch-icon"
@@ -55,7 +77,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={inter.className}>
+      <body className={`${geist.className} bg-background text-foreground`}>
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>

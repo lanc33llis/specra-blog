@@ -1,0 +1,75 @@
+{
+  "primary_mismatch": "The article page is still too display-led: the large media block and full-width author slab delay the actual reading surface and make the blog feel heavier than the restrained product system.",
+  "header_assessment": {
+    "status": "matches",
+    "reason": "The top chrome is thin and quiet with a compact brand mark, simple navigation, and one primary action."
+  },
+  "module_system_assessment": {
+    "status": "drifted",
+    "reason": "The author metadata is boxed as a heavy full-width panel and the cover image behaves like a dominant hero slab rather than a restrained editorial module."
+  },
+  "first_glance_hierarchy_assessment": {
+    "status": "drifted",
+    "reason": "The title is clear, but the first viewport gives too much space to metadata and media before the article body appears."
+  },
+  "product_mode_assessment": {
+    "status": "matches",
+    "reason": "It remains a blog article, not a workspace app, and uses the dark restrained token system."
+  },
+  "findings": [
+    {
+      "area": "Article metadata row",
+      "category": "cohesion",
+      "issue": "Author/date slab is too heavy.",
+      "recommendation": "Convert it to a compact inline metadata row under the title.",
+      "severity": "medium",
+      "target": {
+        "confidence": "high",
+        "selectionBbox": {
+          "x": 116,
+          "y": 195,
+          "width": 1088,
+          "height": 75
+        },
+        "selectionPoint": {
+          "x": 660,
+          "y": 233
+        },
+        "targetHint": "Full-width author/date panel below article title"
+      }
+    },
+    {
+      "area": "Cover image",
+      "category": "structure",
+      "issue": "Cover image dominates the first viewport.",
+      "recommendation": "Cap the cover height and crop it as a restrained article visual.",
+      "severity": "medium",
+      "target": {
+        "confidence": "high",
+        "selectionBbox": {
+          "x": 116,
+          "y": 302,
+          "width": 1088,
+          "height": 498
+        },
+        "selectionPoint": {
+          "x": 660,
+          "y": 551
+        },
+        "targetHint": "Large cover image after metadata row"
+      }
+    }
+  ],
+  "nextAction": "tweak",
+  "scores": {
+    "cohesion": 78,
+    "structure": 76,
+    "theme": 90
+  },
+  "strengths": [
+    "Dark semantic surfaces and restrained chrome are much closer to the handoff.",
+    "The page remains clearly a blog article and does not copy the workspace shell literally."
+  ],
+  "summary": "The visual theme is close, but the article opening needs to become more reading-led and less hero/media-heavy.",
+  "verdict": "needs-refinement"
+}

@@ -1,9 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "../../../lib/api";
-import { CMS_NAME } from "../../../lib/constants";
 import markdownToHtml from "../../../lib/markdownToHtml";
-import Alert from "../../_components/alert";
 import Container from "../../_components/container";
 import Header from "../../_components/header";
 import { PostBody } from "../../_components/post-body";
@@ -19,8 +17,7 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <main>
-      <Alert preview={post.preview} />
+    <main className="bg-background text-foreground">
       <Container>
         <Header />
         <article className="mb-32">
@@ -50,11 +47,14 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} | Specra Blog`;
 
   return {
+    title,
+    description: post.excerpt,
     openGraph: {
       title,
+      description: post.excerpt,
       images: [post.ogImage.url],
     },
   };
